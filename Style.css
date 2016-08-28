@@ -1,0 +1,24 @@
+
+#Menu {
+	width:70%;
+	margin-right: 75%;
+	margin-left: 15%;
+	background-color: teal;
+	Width: 200px;
+	float: left;
+	border: 1px solid black;
+	display: inline-block;
+}
+#Body	{
+	margin-left: 29%;
+	Margin-right: 25%;
+	background-color: lightblue;
+	float:right;
+	border: 1px solid black;
+	float: right;
+	display: inline-block;
+	width: 50%;
+}
+H1 {
+	Text-align:center;
+}
