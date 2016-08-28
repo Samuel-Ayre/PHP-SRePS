@@ -1,0 +1,25 @@
+#MainDisplay{
+		margin-left: 15%;
+		margin-right: 15%;
+}
+
+#Menu {
+	width:70px;
+	background-color: lightblue;
+	Width: 200px;
+	float: left;
+	border: 1px solid black;
+}
+#Body	{
+	background-color: lightgreen;
+	float:right;
+	border: 1px solid black;
+	float: right;
+	width: 86%;
+}
+H1 {
+	Text-align:center;
+}
+html{
+	background-image: url(background.png);
+}
