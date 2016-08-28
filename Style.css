@@ -5,13 +5,13 @@
 
 #Menu {
 	width:70px;
-	background-color: teal;
+	background-color: lightblue;
 	Width: 200px;
 	float: left;
 	border: 1px solid black;
 }
 #Body	{
-	background-color: lightblue;
+	background-color: lightgreen;
 	float:right;
 	border: 1px solid black;
 	float: right;
@@ -19,4 +19,7 @@
 }
 H1 {
 	Text-align:center;
+}
+html{
+	background-image: url(background.png);
 }
