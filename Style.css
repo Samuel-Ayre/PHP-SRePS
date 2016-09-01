@@ -9,16 +9,19 @@
 	Width: 200px;
 	float: left;
 	border: 1px solid black;
+	font-family:Calibri, Arial, sans-serif;
 }
 #Body	{
 	background-color: lightgreen;
 	float:right;
 	border: 1px solid black;
 	float: right;
-	width: 86%;
+	width: 75%;
+	font-family:Calibri, Arial, sans-serif;
 }
 H1 {
 	Text-align:center;
+	font-family:Calibri, Arial, sans-serif;
 }
 html{
 	background-image: url(background.png);
