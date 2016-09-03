@@ -1,6 +1,6 @@
 #MainDisplay{
-		margin-left: 10%;
-		margin-right: 10%;
+		margin-left: 15%;
+		margin-right: 15%;
 }
 
 #Menu {
@@ -9,18 +9,19 @@
 	Width: 200px;
 	float: left;
 	border: 1px solid black;
+	font-family:Calibri, Arial, sans-serif;
 }
 #Body	{
 	background-color: lightgreen;
 	float:right;
 	border: 1px solid black;
 	float: right;
-	width: 70%;
-	margin-left: 10px;
-	margin-right: 20px;
+	width: 25%-90%;
+	font-family:Calibri, Arial, sans-serif;
 }
 H1 {
 	Text-align:center;
+	font-family:Calibri, Arial, sans-serif;
 }
 html{
 	background-image: url(background.png);
