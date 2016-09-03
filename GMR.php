@@ -1,9 +1,9 @@
 <?php
-
-	
-	
-	$month = $_Get['month'];
-
+	session_start()
+	if (isset($_POST("Month")))
+	}
+	$MonthylReport = $_SESSION['allsubmit'];
+	$month = $_POST['Month'];
 
 	switch ($month) {
 		case 'January':
