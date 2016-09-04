@@ -3,6 +3,7 @@
 
 	switch ($month) {
 		case 'January':
+<<<<<<< HEAD
 			$month = "Date >= '2016/01/01' and <= '2016/01/31'";
 			break;
 		case 'February':
@@ -37,10 +38,50 @@
 			break;
 		case 'December':
 			$month = "Date >= '2016/12/01' and <= '2016/12/31'";
+=======
+			$month = "MONTH(date) = 1";
+			break;
+		case 'February':
+			$month = "MONTH(date) = 2";
+			break;
+		case 'March':
+			$month = "MONTH(date) = 3";
+			break;
+		case 'April':
+			$month = "MONTH(date) = 4";
+			break;
+		case 'May':
+			$month = "MONTH(date) = 5";
+			break;
+		case 'June':
+			$month = "MONTH(date) = 6";
+			break;
+		case 'July':
+			$month = "MONTH(date) = 7";
+			break;
+		case 'August':
+			$month = "MONTH(date) = 8";
+			break;
+		case 'September':
+			$month = "MONTH(date) = 9";
+			break;
+		case 'October':
+			$month = "MONTH(date) = 10";
+			break;
+		case 'November':
+			$month = "MONTH(date) = 11";
+			break;
+		case 'December':
+			$month = "MONTH(date) = 12";
+>>>>>>> refs/remotes/origin/Create-Monthly-Report
 			break;
 		default:
 			break;
 	}
+<<<<<<< HEAD
+=======
+	$month += " AND YEAR(date) = 2016";
+>>>>>>> refs/remotes/origin/Create-Monthly-Report
 	
 	$conn = mysqli_connect('110.142.49.152:3306/', 'php3', 'php', 'PHP_SREPS');
 		if (!$conn)
