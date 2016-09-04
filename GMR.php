@@ -51,10 +51,15 @@
 			$query = "Select * from SalesData where $month";
 			
 			$result = mysqli_query($conn, $query);
-		
-			$reference = mysqli_fetch_row($result);
+			
+			if(!$result)
+				echo "querys wrong";
+			else
+			{
+				$reference = mysqli_fetch_row($result);
 
-			echo "$reference";
+				echo "$reference";
+			}
 		}
 		mysqli_close($conn);
 ?>
