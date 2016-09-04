@@ -6,6 +6,8 @@
 	//converts date to a acceotable format in MYSQL
 	$Date1 = Date('Y-m-d', $Date);
 
+
+
 	$conn = mysqli_connect('110.142.49.152:3306/', 'php3', 'php', 'PHP_SREPS');
 	if($conn)
 	{

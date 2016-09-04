@@ -1,8 +1,6 @@
 <?php
 	$month = $_GET['Month'];
 
-echo "test";
-
 	switch ($month) {
 		case 'January':
 			$month = "Date >= '2016/01/01' and <= '2016/01/31'";
