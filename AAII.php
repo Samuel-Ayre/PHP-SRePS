@@ -40,7 +40,7 @@
 	$price = $_GET['price'];
 	$quantity = $_GET['quantity'];
 
-	$conn = mysqli_connect('110.142.49.152:3306/', 'php3', 'php', 'PHP_SREPS');
+	$conn = mysqli_connect('192.168.183.128:3306/', 'php3', 'php', 'PHP_SREPS');
 	if($conn)
 	{
 		$query = "INSERT INTO Inventorydata (INVName, Category, Price, Quantity) VALUES ('$name', '$category', $price, $quantity)";

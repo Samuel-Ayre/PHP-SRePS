@@ -17,7 +17,7 @@
 <Div id="Body">
 <h2>Adding a Inventory Item</h2>
 
-<form id ="AAII" method = "get">
+<form id ="AAII" action = "addItem.php" method = "get">
 
 <p><label for = "name">Item Name</label>
 	<input type = "text" id = "name" name = "name"/></p>
@@ -36,21 +36,3 @@
 
 </body>
 </html>
-<?php
-	$name = $_GET['name'];
-	$category = $_GET['category'];
-	$price = $_GET['price'];
-	$quantity = $_GET['quantity'];
-
-	$conn = mysqli_connect('192.168.183.128:3306/', 'php3', 'php', 'PHP_SREPS');
-	if($conn)
-	{
-		$query = "INSERT INTO Inventorydata (INVName, Category, Price, Quantity) VALUES ('$name', '$category', $price, $quantity)";
-		$result = mysqli_query($conn, $query);
-		if($result)
-			echo "information successfully added";
-		else
-			echo "nope";
-		mysqli_close($conn);
-	}
-}

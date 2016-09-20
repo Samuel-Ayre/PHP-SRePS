@@ -16,7 +16,7 @@
 			<Div id="Body">
 				<h2>Add A Sales Record</h2>
 
-				<form id ="AASR" method = "get">
+				<form id ="AASR" action="AASR.php" method = "get">
 				<table>
 						<tr>
 							<td>Inventory Item No: </td>
@@ -39,33 +39,3 @@
 		</div>
 	</body>
 </html>
-
-<?php
-	
-	if (isset($_GET['INVNo'], $_GET['Date'], $_GET['AmountSold'])) {
-		
-	
-
-	$INVNo = $_GET['INVNo'];
-	$Date = strtotime($_GET['Date']);
-	$AmountSold = $_GET['AmountSold'];
-
-	//converts date to a acceotable format in MYSQL
-	$Date1 = Date('Y-m-d', $Date);
-
-
-
-	$conn = mysqli_connect('192.168.183.128:3306/', 'php3', 'php', 'PHP_SREPS');
-	if($conn)
-	{
-		$query = "INSERT INTO salesdata (InvNo, Date, AmountSold) VALUES ('$INVNo', '$Date1', $AmountSold)";
-		$result = mysqli_query($conn, $query);
-		if($result)
-			echo "information successfully added";
-		else
-			echo "nope";
-		mysqli_close($conn);
-	}
-}
-
-?>
