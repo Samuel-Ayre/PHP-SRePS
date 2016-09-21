@@ -6,13 +6,12 @@
 	</head>
 <body>
 
-<div id="MainDisplay">
-<img src="header.jpg" alt="People Health Pharmacy">
-<div id="Menu" span="menu">
-			<a href="index.html"><h3>Main Menu</h3></a>
-			<a href="AAII.php">Add a Inventory Item</a><br />
-			<a href="GMR.php">Generate Monthly Report</a><br />
-			<a href="AASR.php">Add a Sales Record</a><br />
+		<a href="index.html"><img src="header.jpg" alt="People Health Pharmacy"></a>
+		<div id="MainDisplay">
+		<div id="Menu" span="menu">
+		<a href="AAII.php"><img src="menu1.jpg" alt="Add an Inventory Item"></a><br />
+		<a href="GMR.php"><img src="menu2.jpg" alt="Generate a Monthly Report"></a><br />
+		<a href="AASR.php"><img src="menu3.jpg" alt="Add a Sales Record"></a>
 </div>
 <Div id="Body">
 <h2>Adding a Inventory Item</h2>

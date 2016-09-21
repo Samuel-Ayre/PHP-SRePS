@@ -5,23 +5,18 @@
 		<script type="text/javascript" src="JavascriptRequest.js"></script> 
 	</head>
 	<body>
-		<img src="header.jpg" alt="People Health Pharmacy">
-		<div id="MainDisplay">
-			<div id="Menu" span="menu">
-				<a href="index.php"><h3>Main Menu</h3></a>
-<a href="AAII.php">Add a Inventory Item</a><br />
-<a href="GMR.php">Generate Monthly Report</a><br />
-<a href="AASR.php">Add a Sales Record</a><br />
-			</div>
+		<a href="index.html"><img src="header.jpg" alt="People Health Pharmacy"></a>
+			<div id="MainDisplay">
+				<div id="Menu" span="menu">
+					<a href="AAII.php"><img src="menu1.jpg" alt="Add an Inventory Item"></a><br />
+					<a href="GMR.php"><img src="menu2.jpg" alt="Generate a Monthly Report"></a><br />
+					<a href="AASR.php"><img src="menu3.jpg" alt="Add a Sales Record"></a>
+				</div>
 			<Div id="Body">
 				<h2>Add A Sales Record</h2>
 
 
 <?php
-
-
-
-
 	$conn = mysqli_connect('192.168.183.128:3306/', 'php3', 'php', 'PHP_SREPS');
 
 			$query = "SELECT * FROM inventorydata";
@@ -47,9 +42,6 @@
 							</tr>";
 						$reference = mysqli_fetch_row($result);
 					}
-
-
-
 ?>
 
 
