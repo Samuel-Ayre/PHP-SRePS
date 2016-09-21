@@ -6,8 +6,8 @@
 	</head>
 <body>
 
-<h1>People Health Pharmacy</h1>
 <div id="MainDisplay">
+<img src="header.jpg" alt="People Health Pharmacy">
 <div id="Menu" span="menu">
 			<a href="index.html"><h3>Main Menu</h3></a>
 			<a href="AAII.php">Add a Inventory Item</a><br />
