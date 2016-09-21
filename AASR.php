@@ -16,6 +16,43 @@
 			<Div id="Body">
 				<h2>Add A Sales Record</h2>
 
+
+<?php
+
+
+
+
+	$conn = mysqli_connect('192.168.183.128:3306/', 'php3', 'php', 'PHP_SREPS');
+
+			$query = "SELECT * FROM inventorydata";
+			$result = mysqli_query($conn, $query);
+			$reference = mysqli_fetch_row($result);
+				echo "<Table border='1'>
+						<tr>
+							<td>Inventory Number</td>
+							<td>Inventory Name</td>
+							<td>Category</td>
+							<td>Price</td>
+							<td>Quantity</td>
+						</tr>";	
+			while($reference)
+					{
+						echo "
+							<tr>
+								<td>$reference[0]</td>
+								<td>$reference[1]</td>
+								<td>$reference[2]</td>
+								<td>$$reference[3]</td>
+								<td>$reference[4]</td>
+							</tr>";
+						$reference = mysqli_fetch_row($result);
+					}
+
+
+
+?>
+
+
 				<form id ="AASR" method = "get">
 				<table>
 						<tr>
@@ -35,13 +72,15 @@
 						</tr>
 					</table>
 				</form>
-			</div>
-		</div>
-	</body>
-</html>
+			
+
 
 <?php
 	
+
+
+
+
 	if (isset($_GET['INVNo'], $_GET['Date'], $_GET['AmountSold'])) {
 		
 	
@@ -69,3 +108,7 @@
 }
 
 ?>
+			</div>
+		</div>
+	</body>
+</html>
