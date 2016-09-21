@@ -9,13 +9,12 @@ img {
 }
 
 #Menu {
-	width:70px;
 	background-color: lightblue;
-	Width: 200px;
+	width: 300px;
 	float: left;
 	border: 4px solid white;
 	font-family:Calibri, Arial, sans-serif;
-	padding:8px;
+	padding:4px;
 }
 #Body	{
 	background-color: lightgreen;
