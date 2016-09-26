@@ -50,6 +50,7 @@
 						<td><input type="submit" name="CSubmit" value="Submit"></td>
 					</tr>
 				</table>
+				<input type='submit' name='Export' value='Export to CSV File'>
 
 			</form>
 
@@ -64,7 +65,7 @@
 			echo "<p>Couldn't connect to database</p>";
 		else
 			{
-			$query = "SELECT SaleNo, inventorydata.INVName, Date, AmountSold FROM salesdata INNER JOIN inventorydata ON salesdata.InvNo = inventorydata.INVNO where Date BETWEEN '$FDate' AND '$LDate'";
+			$query = "SELECT SaleNo, inventorydata.INVName, Date, AmountSold FROM salesdata INNER JOIN inventorydata ON salesdata.InvNo = inventorydata.INVNO where Date BETWEEN '$FDate' AND '$LDate' ORDER by date asc";
 			
 			$result = mysqli_query($conn, $query);
 			
@@ -95,8 +96,30 @@
 			}
 		}
 		mysqli_close($conn);
-		echo "<input type='submit' name='Export' value='Export to CSV File'>";
+		
 	}
+	if (isset($_GET['FDate'], $_GET['LDate'], $_GET['Export'])) {
+		$FDate = date("Y-m-d", strtotime($_GET['FDate']));
+		$LDate = date("Y-m-d", strtotime($_GET['LDate']));
+
+		$conn = mysqli_connect('192.168.183.128:3306/', 'php3', 'php', 'PHP_SREPS');
+			if (!$conn)
+				echo "<p>Couldn't connect to database</p>";
+			else
+			{
+				//Reference: http://code.stephenmorley.org/php/creating-downloadable-csv-files/
+				header('Content-Type: text/csv; charset=utf-8');
+				header('Content-Disposition: attachment; filename=data.csv');
+
+				$output = fopen('php://output', 'w');
+				fputcsv($output, array('Sales Number', 'Inventory Name', 'Date', 'Amount Sold'));
+			
+				$result = mysql_query("SELECT SaleNo, inventorydata.INVName, Date, AmountSold FROM salesdata INNER JOIN inventorydata ON salesdata.InvNo = inventorydata.INVNO where Date BETWEEN '$FDate' AND '$LDate' ORDER by date asc");
+
+				while ($row = mysql_fetch_assoc($result)) fputcsv($output, $row);
+
+	}
+}
 ?>
 				
 		</Div>
