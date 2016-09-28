@@ -5,12 +5,12 @@
 		<script type="text/javascript" src="JavascriptRequest.js"></script> 
 	</head>
 	<body>
-		<a href="index.html"><img src="header.jpg" alt="People Health Pharmacy"></a>
+		<a href="index.html"><img src="img/header.jpg" alt="People Health Pharmacy"></a>
 		<div id="MainDisplay">
 		<div id="Menu" span="menu">
-		<a href="AAII.html"><img src="menu1.jpg" alt="Add an Inventory Item"></a><br />
-		<a href="GMR.html"><img src="menu2.jpg" alt="Generate a Monthly Report"></a><br />
-		<a href="AASR.html"><img src="menu3.jpg" alt="Add a Sales Record"></a>
+		<a href="AAII.html"><img src="img/menu1.jpg" alt="Add an Inventory Item"></a><br />
+		<a href="GMR.html"><img src="img/menu2.jpg" alt="Generate a Monthly Report"></a><br />
+		<a href="AASR.html"><img src="img/menu3.jpg" alt="Add a Sales Record"></a>
 		</div>
 			<Div id="Body">
 				<h2>Add A Sales Record</h2>
@@ -18,15 +18,15 @@
 				<form id ="AASR" action="AASR.php" method = "get">
 				<table>
 						<tr>
-							<td>Inventory Item No: </td>
+							<td><label for="INVNo" id="FormLabel">Inventory Item No:</label></td>
 							<td><input type="number" name="INVNo" min="1" max="9999" id="INVNo"></td>
 						</tr>
 						<tr>
-							<td>Date Of Sale</td>
+							<td><label for="Date" id="FormLabel">Date Of Sale:</label></td>
 							<td><input type="date" name="Date" id="Date"></td>
 						</tr>
 						<tr>
-							<td>Amount Sold</td>
+							<td><label for="AmountSold" id="FormLabel">Amount Sold:</label></td>
 							<td><input type="number" name="AmountSold" min="1" max="99999" id="AmountSold"></td>
 						</tr>
 						<tr>
