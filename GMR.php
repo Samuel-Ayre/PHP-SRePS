@@ -6,35 +6,15 @@
 	</head>
 	<body>
 
-<a href="index.html"><img src="header.jpg" alt="People Health Pharmacy"></a>
-<div id="MainDisplay">
-<div id="Menu" span="menu">
-<a href="AAII.php"><img src="menu1.jpg" alt="Add an Inventory Item"></a><br />
-<a href="GMR.php"><img src="menu2.jpg" alt="Generate a Monthly Report"></a><br />
-<a href="AASR.php"><img src="menu3.jpg" alt="Add a Sales Record"></a>
-		</div>
+	<a href="index.html"><img src="img/header.jpg" alt="People Health Pharmacy"></a>
+	<div id="MainDisplay">
+		<div id="Menu" span="menu">
+		<a href="AAII.php"><img src="img/menu1.jpg" alt="Add an Inventory Item"></a><br />
+		<a href="GMR.php"><img src="img/menu2.jpg" alt="Generate a Monthly Report"></a><br />
+		<a href="AASR.php"><img src="img/menu3.jpg" alt="Add a Sales Record"></a>
+	</div>
 		<Div id="Body">
 			<h2>Generate Monthly Report</h2>
-			<h3>Multiple Item Report</h3>
-			<form id="multisearch">
-				<table>
-					<tr>
-						<td>Item 1 Name</td>
-						<td><input type=text name="i1name" width=30px maxlength=255></input></td>
-					</tr>
-					<tr>
-						<td>Item 2 Name</td>
-						<td><input type=text name="i2name" width=30px maxlength=255></input></td>
-					</tr>
-					<tr>
-						<td>Item 3 Name</td>
-						<td><input type=text name="i3name" width=30px maxlength=255></input></td>
-					</tr>
-					<tr>
-						<td><input type=submit name="multisubmit" value="Submit"><!-- Input PHP code here --></input></td>
-					</tr>
-				</table>
-			</form>
 			<form id="Cutomer Range" method="GET">
 				<table>
 					<tr>
@@ -50,8 +30,6 @@
 						<td><input type="submit" name="CSubmit" value="Submit"></td>
 					</tr>
 				</table>
-
-
 			</form>
 
 <?php 
@@ -93,15 +71,12 @@
 					$reference = mysqli_fetch_row($result);
 				}
 				echo "</table>";
-				echo "<a href=Export.php?FDate=",urlencode($FDate),"&LDate=",urlencode($LDate),">Export</a>";
+				echo "<a href=Export.php?FDate=",urlencode($FDate),"&LDate=",urlencode($LDate),">Export to CSV File</a>";
 			}
 		}
 		mysqli_close($conn);
 		
 	}
-	if (isset($_GET['FDate'], $_GET['LDate'], $_GET['Export'])) {
-			include 'Export.php';
-		}
 ?>
 		
 
