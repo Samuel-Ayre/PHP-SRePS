@@ -6,115 +6,44 @@
 	</head>
 	<body>
 
-<a href="index.html"><img src="header.jpg" alt="People Health Pharmacy"></a>
-<div id="MainDisplay">
-<div id="Menu" span="menu">
-<a href="AAII.php"><img src="menu1.jpg" alt="Add an Inventory Item"></a><br />
-<a href="GMR.php"><img src="menu2.jpg" alt="Generate a Monthly Report"></a><br />
-<a href="AASR.php"><img src="menu3.jpg" alt="Add a Sales Record"></a>
-		</div>
+	<a href="index.html"><img src="img/header.jpg" alt="People Health Pharmacy"></a>
+	<div id="MainDisplay">
+		<div id="Menu" span="menu">
+		<a href="AAII.php"><img src="img/menu1.jpg" alt="Add an Inventory Item"></a><br />
+		<a href="GMR.php"><img src="img/menu2.jpg" alt="Generate a Monthly Report"></a><br />
+		<a href="AASR.php"><img src="img/menu3.jpg" alt="Add a Sales Record"></a>
+	</div>
 		<Div id="Body">
 			<h2>Generate Monthly Report</h2>
-			<h3>Multiple Item Report</h3>
-			<form id="multisearch">
+			<form id="Cutomer Range" method="GET">
 				<table>
 					<tr>
-						<td>Item 1 Name</td>
-						<td><input type=text name="i1name" width=30px maxlength=255></input></td>
+						<td>Custom Dates</td>
 					</tr>
 					<tr>
-						<td>Item 2 Name</td>
-						<td><input type=text name="i2name" width=30px maxlength=255></input></td>
+						<td><input type="Date" name="FDate"></td>
 					</tr>
 					<tr>
-						<td>Item 3 Name</td>
-						<td><input type=text name="i3name" width=30px maxlength=255></input></td>
+						<td><input type="Date" name="LDate"></td>
 					</tr>
 					<tr>
-						<td><input type=submit name="multisubmit" value="Submit"><!-- Input PHP code here --></input></td>
-					</tr>
-				</table>
-			</form>
-			<h3>All Item Report</h3>
-			<form id="allsearch"  method="GET">
-				<table>
-					<tr>
-						<td><select name="Month" id="Month">
-							<option Value="January">January</option>
-							<option Value="February">February</option>
-							<option Value="March">March</option>
-							<option Value="April">April</option>
-							<option Value="May">May</option>
-							<option Value="June">June</option>
-							<option Value="July">July</option>
-							<option Value="August">August</option>
-							<option Value="September">September</option>
-							<option Value="October">October</option>
-							<option Value="November">November</option>
-							<option Value="December">December</option>
-						</select>
-						<td><input type=submit name="allsubmit" value="Submit"></input></td>
+						<td><input type="submit" name="CSubmit" value="Submit"></td>
 					</tr>
 				</table>
 			</form>
 
+<?php 
+		
+	if (isset($_GET['FDate'], $_GET['LDate'], $_GET['CSubmit'])) {
+		$FDate = date("Y-m-d", strtotime($_GET['FDate']));
+		$LDate = date("Y-m-d", strtotime($_GET['LDate']));
 
-<?php
-	if (isset($_GET['Month'])) {
-	$month = $_GET['Month'];
-
-	switch ($month) {
-		case 'January':
-			$month = "MONTH(Date) = 1";
-			break;
-		case 'February':
-			$month = "MONTH(Date) = 2";
-			break;
-		case 'March':
-			$month = "MONTH(Date) = 3";
-			break;
-		case 'April':
-			$month = "MONTH(Date) = 4";
-			break;
-		case 'May':
-			$month = "MONTH(Date) = 5";
-			break;
-		case 'June':
-			$month = "MONTH(Date) = 6";
-			break;
-		case 'July':
-			$month = "MONTH(Date) = 7";
-			break;
-		case 'August':
-			$month = "MONTH(Date) = 8";
-			break;
-		case 'September':
-			$month = "MONTH(Date) = 9";
-			break;
-		case 'October':
-			$month = "MONTH(Date) = 10";
-			break;
-		case 'November':
-			$month = "MONTH(Date) = 11";
-			break;
-		case 'December':
-			$month = "MONTH(Date) = 12";
-			break;
-		default:
-			break;
-	}
-	$month .= " AND YEAR(Date) = 2016";
-	
 	$conn = mysqli_connect('192.168.183.128:3306/', 'php3', 'php', 'PHP_SREPS');
 		if (!$conn)
 			echo "<p>Couldn't connect to database</p>";
 		else
 			{
-<<<<<<< HEAD
-			$query = "SELECT SaleNo, inventorydata.INVName, Date, AmountSold FROM salesdata INNER JOIN inventorydata ON salesdata.InvNo = inventorydata.INVNO where $month";
-=======
-			$query = "Select * from salesdata where $month";
->>>>>>> origin/master
+			$query = "SELECT SaleNo, inventorydata.INVName, Date, AmountSold FROM salesdata INNER JOIN inventorydata ON salesdata.InvNo = inventorydata.INVNO where Date BETWEEN '$FDate' AND '$LDate' ORDER by date asc";
 			
 			$result = mysqli_query($conn, $query);
 			
@@ -123,7 +52,6 @@
 			else
 			{
 				$reference = mysqli_fetch_row($result);
-<<<<<<< HEAD
 				echo "<Table border='1'>
 						<tr>
 							<td>Sales Number</td>
@@ -143,18 +71,15 @@
 					$reference = mysqli_fetch_row($result);
 				}
 				echo "</table>";
-=======
-				while($reference)
-				{
-					echo "$reference[0], $reference[1], $reference[2], $reference[3] \n";
-					$reference = mysqli_fetch_row($result);
-				}
->>>>>>> origin/master
+				echo "<a href=Export.php?FDate=",urlencode($FDate),"&LDate=",urlencode($LDate),">Export to CSV File</a>";
 			}
 		}
 		mysqli_close($conn);
+		
 	}
 ?>
+		
+
 
 		</Div>
 	</div>

@@ -6,30 +6,40 @@
 	</head>
 <body>
 
-		<a href="index.html"><img src="header.jpg" alt="People Health Pharmacy"></a>
-		<div id="MainDisplay">
+<a href="index.html"><img src="img/header.jpg" alt="People Health Pharmacy"></a>
+	<div id="MainDisplay">
 		<div id="Menu" span="menu">
-		<a href="AAII.php"><img src="menu1.jpg" alt="Add an Inventory Item"></a><br />
-		<a href="GMR.php"><img src="menu2.jpg" alt="Generate a Monthly Report"></a><br />
-		<a href="AASR.php"><img src="menu3.jpg" alt="Add a Sales Record"></a>
-</div>
+		<a href="AAII.php"><img src="img/menu1.jpg" alt="Add an Inventory Item"></a><br />
+		<a href="GMR.php"><img src="img/menu2.jpg" alt="Generate a Monthly Report"></a><br />
+		<a href="AASR.php"><img src="img/menu3.jpg" alt="Add a Sales Record"></a>
+	</div>
 <Div id="Body">
 <h2>Adding a Inventory Item</h2>
 
-<form id ="AAII">
-
-<p><label for = "name">Item Name</label>
-	<input type = "text" id = "name" name = "name"/></p>
-<p><label for = "category">Category</label>
-	<input type = "text" id = "category" name = "category"/></p>
-<p><label for = "price">Price</label>
-	<input type = "text" id = "price" name = "price"/></p>
-<p><label for = "quantity">Quantity</label>
-	<input type = "number" id = "quantity" name = "quantity"/></p>
-<p><input type = "submit" value = "Submit"/>
-
-
+<form id ="AAII" action = "addItem.php" method = "get">
+	<table>
+		<tr>
+			<td><label for = "name" id="FormLabel">Item Name:</label></td>
+			<td><input type = "text" id = "name" name = "name"/></td>
+		</tr>
+		<tr>
+			<td><label for = "category" id="FormLabel">Category:</label></td>
+			<td><input type = "text" id = "category" name = "category"/></td>
+		</tr>
+		<tr>
+			<td><label for = "price" id="FormLabel">Price:</label></td>
+			<td><input type = "text" id = "price" name = "price"/></td>
+		</tr>
+		<tr>
+			<td><label for = "quantity" id="FormLabel">Quantity:</label></td>
+			<td><input type = "number" id = "quantity" name = "quantity"/></td>
+		</tr>
+		<tr>
+			<td><input type = "submit" value = "Submit"/></td>
+		</tr>
+	</table>
 </form>
+
 <?php
 	if(isset($_GET['name'],$_GET['category'],$_GET['price'], $_GET['quantity']))
 		{	

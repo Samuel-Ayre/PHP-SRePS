@@ -1,42 +1,50 @@
-#MainDisplay{
-	margin-left: 15%;
-	margin-right: 15%;
+#MainDisplay
+{
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
-img {
+img 
+{
 	display: block;
 	margin: auto;
 }
 
-#Menu {
+#Menu 
+{
 	background-color: lightblue;
-	width: 300px;
+	width: 200px;
 	float: left;
 	border: 4px solid white;
-<<<<<<< HEAD
-	font-family: Calibri, Arial, sans-serif;
-=======
 	font-family:Calibri, Arial, sans-serif;
->>>>>>> origin/master
 	padding:4px;
+	margin-top: 10px;
 }
-#Body	{
+
+#Body	
+{
 	background-color: lightgreen;
-	float:right;
+	float:left;
 	border: 4px solid white;
-	float: right;
-	width: 25%-90%;
-<<<<<<< HEAD
-	font-family: Calibri, Arial, sans-serif;
-=======
+	width: 300px;
 	font-family:Calibri, Arial, sans-serif;
->>>>>>> origin/master
 	padding: 8px;
+	margin-left: 12.2%;
+	margin-top: 10px;
 }
-H1 {
-	Text-align:center;
+
+#FormLabel
+{
+	text-align: right;
+}
+
+H1 
+{
+	text-align:center;
 	font-family:Calibri, Arial, sans-serif;
 }
-html{
-	background-image: url(background.png);
+
+html
+{
+	background-image: url(Background.png);
 }
