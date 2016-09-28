@@ -13,7 +13,11 @@ img {
 	width: 300px;
 	float: left;
 	border: 4px solid white;
+<<<<<<< HEAD
 	font-family: Calibri, Arial, sans-serif;
+=======
+	font-family:Calibri, Arial, sans-serif;
+>>>>>>> origin/master
 	padding:4px;
 }
 #Body	{
@@ -22,7 +26,11 @@ img {
 	border: 4px solid white;
 	float: right;
 	width: 25%-90%;
+<<<<<<< HEAD
 	font-family: Calibri, Arial, sans-serif;
+=======
+	font-family:Calibri, Arial, sans-serif;
+>>>>>>> origin/master
 	padding: 8px;
 }
 H1 {

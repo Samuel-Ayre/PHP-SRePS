@@ -110,7 +110,11 @@
 			echo "<p>Couldn't connect to database</p>";
 		else
 			{
+<<<<<<< HEAD
 			$query = "SELECT SaleNo, inventorydata.INVName, Date, AmountSold FROM salesdata INNER JOIN inventorydata ON salesdata.InvNo = inventorydata.INVNO where $month";
+=======
+			$query = "Select * from salesdata where $month";
+>>>>>>> origin/master
 			
 			$result = mysqli_query($conn, $query);
 			
@@ -119,6 +123,7 @@
 			else
 			{
 				$reference = mysqli_fetch_row($result);
+<<<<<<< HEAD
 				echo "<Table border='1'>
 						<tr>
 							<td>Sales Number</td>
@@ -138,6 +143,13 @@
 					$reference = mysqli_fetch_row($result);
 				}
 				echo "</table>";
+=======
+				while($reference)
+				{
+					echo "$reference[0], $reference[1], $reference[2], $reference[3] \n";
+					$reference = mysqli_fetch_row($result);
+				}
+>>>>>>> origin/master
 			}
 		}
 		mysqli_close($conn);
