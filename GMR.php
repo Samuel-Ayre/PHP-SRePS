@@ -1,6 +1,6 @@
 <HTML XMLns="http://www.w3.org/1999/xHTML"> 
   <head> 
-	<title>People Health Pharamacy Sales System: Generate Monthly Report</title>
+	<title>People Health Pharmacy - Generate Monthly Report</title>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 		<script type="text/javascript" src="JavascriptRequest.js"></script> 
 	</head>
@@ -13,8 +13,8 @@
 		<a href="GMR.php"><img src="img/menu2.jpg" alt="Generate a Monthly Report"></a><br />
 		<a href="AASR.php"><img src="img/menu3.jpg" alt="Add a Sales Record"></a>
 	</div>
-		<Div id="Body">
-			<h2>Generate Monthly Report</h2>
+		<div id="Body">
+			<h2 id="Center">Generate a Monthly Report</h2>
 			<form id="Cutomer Range" method="GET">
 				<table>
 					<tr>

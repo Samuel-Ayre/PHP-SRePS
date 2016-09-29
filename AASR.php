@@ -1,6 +1,6 @@
 <HTML XMLns="http://www.w3.org/1999/xHTML"> 
   <head> 
-	<title>BuyOnline Add A New Sales Record</title>
+	<title>People Health Pharmacy - Add a Sales Record</title>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 		<script type="text/javascript" src="JavascriptRequest.js"></script> 
 	</head>
@@ -12,8 +12,8 @@
 		<a href="GMR.php"><img src="img/menu2.jpg" alt="Generate a Monthly Report"></a><br />
 		<a href="AASR.php"><img src="img/menu3.jpg" alt="Add a Sales Record"></a>
 	</div>
-			<Div id="Body">
-				<h2>Add A Sales Record</h2>
+			<div id="Body">
+				<h2 id="Center">Add a Sales Record</h2>
 
 
 
@@ -49,15 +49,15 @@
 			<form>
 				<table>
 						<tr>
-							<td><label for="INVNo" id="FormLabel">Inventory Item No:</label></td>
+							<td><label for="INVNo">Inventory Item No:</label></td>
 							<td><input type="number" name="INVNo" min="1" max="9999" id="INVNo"></td>
 						</tr>
 						<tr>
-							<td><label for="Date" id="FormLabel">Date Of Sale:</label></td>
+							<td><label for="Date">Date Of Sale:</label></td>
 							<td><input type="date" name="Date" id="Date"></td>
 						</tr>
 						<tr>
-							<td><label for="AmountSold" id="FormLabel">Amount Sold:</label></td>
+							<td><label for="AmountSold">Amount Sold:</label></td>
 							<td><input type="number" name="AmountSold" min="1" max="99999" id="AmountSold"></td>
 						</tr>
 						<tr>

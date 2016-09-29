@@ -24,18 +24,24 @@ img
 #Body	
 {
 	background-color: lightgreen;
-	float:left;
 	border: 4px solid white;
-	width: 300px;
 	font-family:Calibri, Arial, sans-serif;
 	padding: 8px;
-	margin-left: 12.2%;
+	width:697px;
+	height: 50%;
+	margin:auto;
 	margin-top: 10px;
 }
 
-#FormLabel
+label
 {
 	text-align: right;
+	display: block;
+}
+
+#Center
+{
+	text-align: center;
 }
 
 H1 
@@ -46,5 +52,5 @@ H1
 
 html
 {
-	background-image: url(Background.png);
+	background-image: url(img/Background.png);
 }

@@ -1,6 +1,6 @@
 <HTML XMLns="http://www.w3.org/1999/xHTML"> 
   <head> 
-	<title>BuyOnline Add New Item</title>
+	<title>People Health Pharmacy - Add an Inventory Item</title>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 		<script type="text/javascript" src="JavascriptRequest.js"></script> 
 	</head>
@@ -13,25 +13,25 @@
 		<a href="GMR.php"><img src="img/menu2.jpg" alt="Generate a Monthly Report"></a><br />
 		<a href="AASR.php"><img src="img/menu3.jpg" alt="Add a Sales Record"></a>
 	</div>
-<Div id="Body">
-<h2>Adding a Inventory Item</h2>
+<div id="Body">
+<h2 id="Center">Adding an Inventory Item</h2>
 
 <form id ="AAII" action = "addItem.php" method = "get">
 	<table>
 		<tr>
-			<td><label for = "name" id="FormLabel">Item Name:</label></td>
+			<td><label for = "name">Item Name:</label></td>
 			<td><input type = "text" id = "name" name = "name"/></td>
 		</tr>
 		<tr>
-			<td><label for = "category" id="FormLabel">Category:</label></td>
+			<td><label for = "category">Category:</label></td>
 			<td><input type = "text" id = "category" name = "category"/></td>
 		</tr>
 		<tr>
-			<td><label for = "price" id="FormLabel">Price:</label></td>
+			<td><label for = "price">Price:</label></td>
 			<td><input type = "text" id = "price" name = "price"/></td>
 		</tr>
 		<tr>
-			<td><label for = "quantity" id="FormLabel">Quantity:</label></td>
+			<td><label for = "quantity">Quantity:</label></td>
 			<td><input type = "number" id = "quantity" name = "quantity"/></td>
 		</tr>
 		<tr>
