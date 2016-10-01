@@ -54,10 +54,10 @@
 				$reference = mysqli_fetch_row($result);
 				echo "<Table border='1'>
 						<tr>
-							<td>Sales Number</td>
-							<td>Inventory Name</td>
-							<td>Date</td>
-							<td>Amount Sold</td>
+							<td width='150px'>Sales Number</td>
+							<td width='150px'>Inventory Name</td>
+							<td width='150px'>Date</td>
+							<td width='150px'>Amount Sold</td>
 						</tr>";							;
 				while($reference)
 				{

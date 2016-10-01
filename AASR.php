@@ -25,11 +25,11 @@
 			$reference = mysqli_fetch_row($result);
 				echo "<Table border='1'>
 						<tr>
-							<td>Inventory Number</td>
-							<td>Inventory Name</td>
-							<td>Category</td>
-							<td>Price</td>
-							<td>Quantity</td>
+							<td width='150px'>Inventory Number</td>
+							<td width='150px'>Inventory Name</td>
+							<td width='150px'>Category</td>
+							<td width='150px'>Price</td>
+							<td width='150px'>Quantity</td>
 						</tr>";	
 			while($reference)
 					{
@@ -58,7 +58,7 @@
 						</tr>
 						<tr>
 							<td><label for="AmountSold" id="FormLabel">Amount Sold:</label></td>
-							<td><input type="number" name="AmountSold" min="1" max="99999" id="AmountSold"></td>
+							<td><input type="number" name="AmountSold" min="1" max="9999" id="AmountSold"></td>
 						</tr>
 						<tr>
 							<td><input type="Submit" name="Submit"></td>
@@ -75,17 +75,27 @@
 	
 
 	$INVNo = $_GET['INVNo'];
-	$Date = strtotime($_GET['Date']);
+	$Date = $_GET['Date'];
 	$AmountSold = $_GET['AmountSold'];
+	$INVNo = intval($INVNo);
+	$error = 0;
 
-	// if (!($INVNo >= 1 && $INVno <= $max)) {
-	// 	echo "Please enter a valid inventory number</br>";
+	 if (!preg_match("/^[1-9][0-9]{0,15}$/", $INVNo)) {
+           		echo "Please enter a valid inventory number<br/>";
+				$error = 1;
+			}else if ($INVNo >= $max) {
+			echo "Please enter in a valid inventory number<br/>";
+			$error = 1;
+		}
 
-	// }else {
-	// if (!($AmountSold >=1 && $AmountSold <= 9999)) {
-	// 		echo "Please enter a valid Amount number</br>";
-	// 	}else {
+	 if (!preg_match("/^[1-9][0-9]{0,15}$/", $AmountSold)) {
+	           		echo "Please enter a valid Amount<br/>";
+					$error = 1;
+				}
 
+		if ($error = 0) {
+			
+		$Date = strtotime($_GET['Date']);
 		//converts date to a acceotable format in MYSQL
 		$Date1 = Date('Y-m-d', $Date);
 
@@ -103,8 +113,7 @@
 			mysqli_close($conn);
 		}
 	}
-// 	}
-// }
+}
 
 ?>
 			</div>
