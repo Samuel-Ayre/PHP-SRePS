@@ -1,46 +1,48 @@
 <HTML XMLns="http://www.w3.org/1999/xHTML"> 
   <head> 
-	<title>BuyOnline Add New Item</title>
+	<title>People Health Pharmacy - Add an Inventory Item</title>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 		<script type="text/javascript" src="JavascriptRequest.js"></script> 
 	</head>
 <body>
 
-<a href="index.html"><img src="img/header.jpg" alt="People Health Pharmacy"></a>
-	<div id="MainDisplay">
+<div id="Header"><a href="index.html"><img src="img/header.jpg" alt="People Health Pharmacy"></a></div>
+<div id="MainDisplay">
 		<div id="Menu" span="menu">
-		<a href="AAII.php"><img src="img/menu1.jpg" alt="Add an Inventory Item"></a><br />
-		<a href="GMR.php"><img src="img/menu2.jpg" alt="Generate a Monthly Report"></a><br />
-		<a href="AASR.php"><img src="img/menu3.jpg" alt="Add a Sales Record"></a>
-	</div>
-<Div id="Body">
-<h2>Adding a Inventory Item</h2>
+		<a href="AAII.php"><img src="img/menuInv.jpg" alt="Add an Inventory Item"></a><br />
+		<a href="AASR.php"><img src="img/menuSale.jpg" alt="Add a Sales Record"></a><br />
+		<a href="GMR.php"><img src="img/menuRep.jpg" alt="Generate a Report"></a>
+		</div>
+<div id="Body">
+<h2 id="Center">Add an Inventory Item</h2>
 
-<form id ="AAII" method = "get">
+<form id ="AAII" action = "addItem.php" method = "get">
 	<table>
-		<tr
-		>
-			<td width="120px"><label for = "name" id="FormLabel">Item Name:</label></td>
-			<td><input type = "text" id = "name" name = "name" maxlength="35" minlength="8" /></td>
+		<tr>
+			<td><label for = "name">Item Name:</label></td>
+			<td><input type = "text" id = "name" name = "name" maxlength="35" minlength="8"/></td>
 		</tr>
 		<tr>
-			<td><label for = "category" id="FormLabel">Category:</label></td>
-			<td><input type = "text" id = "category" name = "category" maxlength="35" minlength="8" n/></td>
+			<td><label for = "category">Category:</label></td>
+			<td><input type = "text" id = "category" name = "category" maxlength="35" minlength="8"/></td>
 		</tr>
 		<tr>
-			<td><label for = "price" id="FormLabel">Price:</label></td>
-			<td><input type = "text" id = "price" name = "price" max="9999" /></td>
+			<td><label for = "price">Price:</label></td>
+			<td><input type = "text" id = "price" name = "price"  max="9999"/></td>
 		</tr>
 		<tr>
-			<td><label for = "quantity" id="FormLabel">Quantity:</label></td>
-			<td><input type = "number" id = "quantity" name = "quantity" max="9999" /></td>
+			<td><label for = "quantity">Quantity:</label></td>
+			<td><input type = "number" id = "quantity" name = "quantity"  max="9999"/></td>
 		</tr>
 		<tr>
+			<td></td>
 			<td><input type = "submit" value = "Submit"/></td>
 		</tr>
 	</table>
 </form>
 
+
+		
 <?php
 	if(isset($_GET['name'],$_GET['category'],$_GET['price'], $_GET['quantity']))
 		{	
@@ -88,6 +90,7 @@
 }
 ?>
 </div>
+<div id="Help"><a href="help.html"><img src="img/help.jpg" alt="Need Help?"></a></div>
 </div>
 
 </body>
