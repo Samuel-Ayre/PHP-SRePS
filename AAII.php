@@ -6,15 +6,15 @@
 	</head>
 <body>
 
-<a href="index.html"><img src="img/header.jpg" alt="People Health Pharmacy"></a>
-	<div id="MainDisplay">
+<div id="Header"><a href="index.html"><img src="img/header.jpg" alt="People Health Pharmacy"></a></div>
+<div id="MainDisplay">
 		<div id="Menu" span="menu">
-		<a href="AAII.php"><img src="img/menu1.jpg" alt="Add an Inventory Item"></a><br />
-		<a href="GMR.php"><img src="img/menu2.jpg" alt="Generate a Monthly Report"></a><br />
-		<a href="AASR.php"><img src="img/menu3.jpg" alt="Add a Sales Record"></a>
-	</div>
+		<a href="AAII.php"><img src="img/menuInv.jpg" alt="Add an Inventory Item"></a><br />
+		<a href="AASR.php"><img src="img/menuSale.jpg" alt="Add a Sales Record"></a><br />
+		<a href="GMR.php"><img src="img/menuRep.jpg" alt="Generate a Report"></a>
+		</div>
 <div id="Body">
-<h2 id="Center">Adding an Inventory Item</h2>
+<h2 id="Center">Add an Inventory Item</h2>
 
 <form id ="AAII" action = "addItem.php" method = "get">
 	<table>
@@ -35,6 +35,7 @@
 			<td><input type = "number" id = "quantity" name = "quantity"/></td>
 		</tr>
 		<tr>
+			<td></td>
 			<td><input type = "submit" value = "Submit"/></td>
 		</tr>
 	</table>
@@ -63,6 +64,7 @@
 }
 ?>
 </div>
+<div id="Help"><a href="help.html"><img src="img/help.jpg" alt="Need Help?"></a></div>
 </div>
 
 </body>

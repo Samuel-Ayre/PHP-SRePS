@@ -1,19 +1,19 @@
 <HTML XMLns="http://www.w3.org/1999/xHTML"> 
   <head> 
-	<title>People Health Pharmacy - Add a Sales Record</title>
+	<title>People Health Pharmacy - Add a Sale Record</title>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 		<script type="text/javascript" src="JavascriptRequest.js"></script> 
 	</head>
 	<body>
-		<a href="index.html"><img src="img/header.jpg" alt="People Health Pharmacy"></a>
+		<div id="Header"><a href="index.html"><img src="img/header.jpg" alt="People Health Pharmacy"></a></div>
 		<div id="MainDisplay">
 		<div id="Menu" span="menu">
-		<a href="AAII.php"><img src="img/menu1.jpg" alt="Add an Inventory Item"></a><br />
-		<a href="GMR.php"><img src="img/menu2.jpg" alt="Generate a Monthly Report"></a><br />
-		<a href="AASR.php"><img src="img/menu3.jpg" alt="Add a Sales Record"></a>
+		<a href="AAII.php"><img src="img/menuInv.jpg" alt="Add an Inventory Item"></a><br />
+		<a href="AASR.php"><img src="img/menuSale.jpg" alt="Add a Sale Record"></a><br />
+		<a href="GMR.php"><img src="img/menuRep.jpg" alt="Generate a Report"></a>
 	</div>
 			<div id="Body">
-				<h2 id="Center">Add a Sales Record</h2>
+				<h2 id="Center">Add a Sale Record</h2>
 
 
 
@@ -25,11 +25,11 @@
 			$reference = mysqli_fetch_row($result);
 				echo "<Table border='1'>
 						<tr>
-							<td>Inventory Number</td>
-							<td>Inventory Name</td>
-							<td>Category</td>
-							<td>Price</td>
-							<td>Quantity</td>
+							<th>Inventory Number</th>
+							<th>Inventory Name</th>
+							<th>Category</th>
+							<th>Price</th>
+							<th>Quantity</th>
 						</tr>";	
 			while($reference)
 					{
@@ -57,10 +57,11 @@
 							<td><input type="date" name="Date" id="Date"></td>
 						</tr>
 						<tr>
-							<td><label for="AmountSold">Amount Sold:</label></td>
+							<td><label for="AmountSold">Quantity Sold:</label></td>
 							<td><input type="number" name="AmountSold" min="1" max="99999" id="AmountSold"></td>
 						</tr>
 						<tr>
+							<td></td>
 							<td><input type="Submit" name="Submit"></td>
 						</tr>
 					</table>
@@ -108,6 +109,7 @@
 
 ?>
 			</div>
+			<div id="Help"><a href="help.html"><img src="img/help.jpg" alt="Need Help?"></a></div>
 		</div>
 	</body>
 </html>

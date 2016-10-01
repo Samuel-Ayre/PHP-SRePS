@@ -1,32 +1,32 @@
 <HTML XMLns="http://www.w3.org/1999/xHTML"> 
   <head> 
-	<title>People Health Pharmacy - Generate Monthly Report</title>
+	<title>People Health Pharmacy - Generate a Report</title>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 		<script type="text/javascript" src="JavascriptRequest.js"></script> 
 	</head>
 	<body>
 
-	<a href="index.html"><img src="img/header.jpg" alt="People Health Pharmacy"></a>
+<div id="Header"><a href="index.html"><img src="img/header.jpg" alt="People Health Pharmacy"></a></div>
 	<div id="MainDisplay">
 		<div id="Menu" span="menu">
-		<a href="AAII.php"><img src="img/menu1.jpg" alt="Add an Inventory Item"></a><br />
-		<a href="GMR.php"><img src="img/menu2.jpg" alt="Generate a Monthly Report"></a><br />
-		<a href="AASR.php"><img src="img/menu3.jpg" alt="Add a Sales Record"></a>
+		<a href="AAII.php"><img src="img/menuInv.jpg" alt="Add an Inventory Item"></a><br />
+		<a href="AASR.php"><img src="img/menuSale.jpg" alt="Add a Sales Record"></a><br />
+		<a href="GMR.php"><img src="img/menuRep.jpg" alt="Generate a Report"></a>
 	</div>
 		<div id="Body">
-			<h2 id="Center">Generate a Monthly Report</h2>
+			<h2 id="Center">Generate a Report</h2>
 			<form id="Cutomer Range" method="GET">
 				<table>
 					<tr>
-						<td>Custom Dates</td>
-					</tr>
-					<tr>
+						<td><label>From:</label></td>
 						<td><input type="Date" name="FDate"></td>
 					</tr>
 					<tr>
+						<td><label>To:</label></td>
 						<td><input type="Date" name="LDate"></td>
 					</tr>
 					<tr>
+						<td></td>
 						<td><input type="submit" name="CSubmit" value="Submit"></td>
 					</tr>
 				</table>
@@ -54,10 +54,10 @@
 				$reference = mysqli_fetch_row($result);
 				echo "<Table border='1'>
 						<tr>
-							<td>Sales Number</td>
-							<td>Inventory Name</td>
-							<td>Date</td>
-							<td>Amount Sold</td>
+							<th>Sales Number</th>
+							<th>Inventory Name</th>
+							<th>Date</th>
+							<th>Amount Sold</th>
 						</tr>";							;
 				while($reference)
 				{
@@ -81,7 +81,8 @@
 		
 
 
-		</Div>
+		</div>
+		<div id="Help"><a href="help.html"><img src="img/help.jpg" alt="Need Help?"></a></div>
 	</div>
 	</body>
 </html>
