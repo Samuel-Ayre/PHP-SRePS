@@ -1,57 +1,87 @@
-<?php
-	$month = $_Get['month'];
+<HTML XMLns="http://www.w3.org/1999/xHTML"> 
+  <head> 
+	<title>People Health Pharamacy Sales System: Generate Monthly Report</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<script type="text/javascript" src="JavascriptRequest.js"></script> 
+	</head>
+	<body>
 
-	switch ($month) {
-		case 'January':
-			$month = "Date >= '2016/01/01' and <= '2016/01/31'"
-			break;
-		case 'February':
-			$month = "Date >= '2016/02/01' and <= '2016/02/29'"
-			break;
-		case 'March':
-			$month = "Date >= '2016/03/01' and <= '2016/03/31'"
-			break;
-		case 'April':
-			$month = "Date >= '2016/04/01' and <= '2016/04/30'"
-			break;
-		case 'May':
-			$month = "Date >= '2016/05/01' and <= '2016/05/31'"
-			break;
-		case 'June':
-			$month = "Date >= '2016/06/01' and <= '2016/06/30'"
-			break;
-		case 'July':
-			$month = "Date >= '2016/07/01' and <= '2016/07/31'"
-			break;
-		case 'August':
-			$month = "Date >= '2016/08/01' and <= '2016/08/31'"
-			break;
-		case 'September':
-			$month = "Date >= '2016/09/01' and <= '2016/09/30'"
-			break;
-		case 'October':
-			$month = "Date >= '2016/10/01' and <= '2016/10/31'"
-			break;
-		case 'November':
-			$month = "Date >= '2016/11/01' and <= '2016/11/30'"
-			break;
-		case 'December':
-			$month = "Date >= '2016/12/01' and <= '2016/12/31'"
-			break;
-		default:
-			break;
-	}
-	
-	$conn = mysqli_connect('http://110.142.49.152:32123/', 'root', 'TeamGreen123', 'PHP-SRePS');
+	<a href="index.html"><img src="img/header.jpg" alt="People Health Pharmacy"></a>
+	<div id="MainDisplay">
+		<div id="Menu" span="menu">
+		<a href="AAII.php"><img src="img/menu1.jpg" alt="Add an Inventory Item"></a><br />
+		<a href="GMR.php"><img src="img/menu2.jpg" alt="Generate a Monthly Report"></a><br />
+		<a href="AASR.php"><img src="img/menu3.jpg" alt="Add a Sales Record"></a>
+	</div>
+		<Div id="Body">
+			<h2>Generate Monthly Report</h2>
+			<form id="Cutomer Range" method="GET">
+				<table>
+					<tr>
+						<td>Custom Dates</td>
+					</tr>
+					<tr>
+						<td><input type="Date" name="FDate"></td>
+					</tr>
+					<tr>
+						<td><input type="Date" name="LDate"></td>
+					</tr>
+					<tr>
+						<td><input type="submit" name="CSubmit" value="Submit"></td>
+					</tr>
+				</table>
+			</form>
+
+<?php 
+		
+	if (isset($_GET['FDate'], $_GET['LDate'], $_GET['CSubmit'])) {
+		$FDate = date("Y-m-d", strtotime($_GET['FDate']));
+		$LDate = date("Y-m-d", strtotime($_GET['LDate']));
+
+	$conn = mysqli_connect('192.168.183.128:3306/', 'php3', 'php', 'PHP_SREPS');
 		if (!$conn)
 			echo "<p>Couldn't connect to database</p>";
 		else
-			$query = "Select * from SalesData where $month"
+			{
+			$query = "SELECT SaleNo, inventorydata.INVName, Date, AmountSold FROM salesdata INNER JOIN inventorydata ON salesdata.InvNo = inventorydata.INVNO where Date BETWEEN '$FDate' AND '$LDate' ORDER by date asc";
 			
 			$result = mysqli_query($conn, $query);
-		
-			$reference = mysqli_fetch_row($result);
-			echo "$reference";
-
+			
+			if(!$result)
+				echo "querys wrong";
+			else
+			{
+				$reference = mysqli_fetch_row($result);
+				echo "<Table border='1'>
+						<tr>
+							<td width='150px'>Sales Number</td>
+							<td width='150px'>Inventory Name</td>
+							<td width='150px'>Date</td>
+							<td width='150px'>Amount Sold</td>
+						</tr>";							;
+				while($reference)
+				{
+					echo "
+						<tr>
+							<td>$reference[0]</td>
+							<td>$reference[1]</td>
+							<td>$reference[2]</td>
+							<td>$reference[3]</td>
+						</tr>";
+					$reference = mysqli_fetch_row($result);
+				}
+				echo "</table>";
+				echo "<a href=Export.php?FDate=",urlencode($FDate),"&LDate=",urlencode($LDate),">Export to CSV File</a>";
+			}
+		}
 		mysqli_close($conn);
+		
+	}
 ?>
+		
+
+
+		</Div>
+	</div>
+	</body>
+</html>
