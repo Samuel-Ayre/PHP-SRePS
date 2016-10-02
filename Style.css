@@ -90,3 +90,7 @@ html
 {
 	background-image: url(img/Background.png);
 }
+#error
+{
+	color: red;
+}

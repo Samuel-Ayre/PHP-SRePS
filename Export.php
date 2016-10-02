@@ -13,7 +13,7 @@
 				//Reference: http://code.stephenmorley.org/php/creating-downloadable-csv-files/
 				header('Content-Type: text/csv; charset=utf-8');
 				header('Content-Disposition: attachment; filename=data.csv');
-
+				//writes the output to a CSV file
 				$output = fopen('php://output', 'w');
 				fputcsv($output, array('Sales Number', 'Inventory Name', 'Date', 'Amount Sold'));
 			
@@ -22,9 +22,10 @@
 				$result = mysqli_query($conn, $query);
 			
 				if(!$result)
-					echo "querys wrong";
+					echo "Failed to upload data, please ensure you have entered in the correct fields";
 				else
 				{
+					//for every row write to file
 					$reference = mysqli_fetch_row($result);
 					while ($reference) {
 						fputcsv($output, array($reference[0], $reference[1],$reference[2], $reference[3]));

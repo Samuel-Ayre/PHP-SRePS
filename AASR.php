@@ -5,6 +5,7 @@
 		<script type="text/javascript" src="JavascriptRequest.js"></script> 
 	</head>
 	<body>
+	<!-- This is the menu for the website, allowing users to navigate the various webpageds  -->
 		<div id="Header"><a href="index.html"><img src="img/header.jpg" alt="People Health Pharmacy"></a></div>
 		<div id="MainDisplay">
 		<div id="Menu" span="menu">
@@ -18,14 +19,14 @@
 
 <?php
 	$conn = mysqli_connect('192.168.183.128:3306/', 'php3', 'php', 'PHP_SREPS');
-	$max=0;
+	$max = [];
 			$query = "SELECT * FROM inventorydata";
 			$result = mysqli_query($conn, $query);
 			$reference = mysqli_fetch_row($result);
 				echo "<Table border='1'>
 						<tr>
 							<td width='150px'>Inventory Number</td>
-							<td width='150px'>Inventory Name</td>
+							<td width='300px'>Inventory Name</td>
 							<td width='150px'>Category</td>
 							<td width='150px'>Price</td>
 							<td width='150px'>Quantity</td>
@@ -40,7 +41,7 @@
 								<td>$$reference[3]</td>
 								<td>$reference[4]</td>
 							</tr>";
-						$max = $max + 1;
+						$max[] = $reference[0];
 						$reference = mysqli_fetch_row($result);
 					}
 ?>
@@ -79,20 +80,21 @@
 	$AmountSold = $_GET['AmountSold'];
 	$INVNo = intval($INVNo);
 	$error = 0;
-
+			echo "<div id='error'";
+      
+	//validates if value is a integer then checks if it is greater than the values 
 	 if (!preg_match("/^[1-9][0-9]{0,15}$/", $INVNo)) {
            		echo "Please enter a valid inventory number<br/>";
 				$error = 1;
-			}else if ($INVNo >= $max) {
+			}else if (!in_array($INVNo, $max)) {
 			echo "Please enter in a valid inventory number<br/>";
 			$error = 1;
 		}
-
 	 if (!preg_match("/^[1-9][0-9]{0,15}$/", $AmountSold)) {
 	           		echo "Please enter a valid Amount<br/>";
 					$error = 1;
 				}
-
+    echo "</div>";
 		if ($error = 0) {
 			
 		$Date = strtotime($_GET['Date']);

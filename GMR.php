@@ -8,6 +8,7 @@
 
 <div id="Header"><a href="index.html"><img src="img/header.jpg" alt="People Health Pharmacy"></a></div>
 	<div id="MainDisplay">
+	<!-- This is the menu for the website, allowing users to navigate the various webpageds  -->
 		<div id="Menu" span="menu">
 		<a href="AAII.php"><img src="img/menuInv.jpg" alt="Add an Inventory Item"></a><br />
 		<a href="AASR.php"><img src="img/menuSale.jpg" alt="Add a Sales Record"></a><br />
@@ -47,7 +48,7 @@
 			$result = mysqli_query($conn, $query);
 			
 			if(!$result)
-				echo "querys wrong";
+				echo "Failed to upload data, please ensure you have entered in the correct fields";
 			else
 			{
 				$reference = mysqli_fetch_row($result);
