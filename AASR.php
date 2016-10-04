@@ -95,7 +95,7 @@
 					$error = 1;
 				}
     echo "</div>";
-		if ($error = 0) {
+		if ($error == 0) {
 			
 		$Date = strtotime($_GET['Date']);
 		//converts date to a acceotable format in MYSQL
